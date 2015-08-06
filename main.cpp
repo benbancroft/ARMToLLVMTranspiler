@@ -7,6 +7,6 @@ int main()
 {
     //add some checks in here, maybe even move magic check incase more binary formats are added (PE?)
 
-    readELF(file);
+    return readELF(file);
 }
 

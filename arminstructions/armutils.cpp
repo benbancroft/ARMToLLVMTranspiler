@@ -36,7 +36,13 @@ namespace Arm{
             if (bitset[25] == 0){
                 return new BlockDataTransferInstruction(condition);
             }else{
-                //return new BranchInstruction(condition);
+                int32_t addressoffset = (rawInstruction & 0x00FFFFFF) << 2;
+                //sign extend twos compliment
+                if (0x02000000 & addressoffset){
+                    addressoffset |= 0xFF000000;
+                }
+                //"The  branch offset must take account of the prefetch operation, which causes the  PC  to be 2 words (8 bytes) ahead of the current instruction."
+                return new BranchInstruction(condition, bitset[24], addressoffset);
             }
         }break;
         }

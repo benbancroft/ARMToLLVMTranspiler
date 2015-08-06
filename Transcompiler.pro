@@ -11,6 +11,7 @@ SOURCES += main.cpp \
     arminstructions/dataprocessinginstruction.cpp \
     arminstructions/singledatatransferinstruction.cpp \
     arminstructions/blockdatatransferinstruction.cpp \
+    arminstructions/branchinstruction.cpp \
     arminstructions/armutils.cpp \
     utils.cpp
 
@@ -23,5 +24,6 @@ HEADERS += \
     arminstructions/dataprocessinginstruction.h \
     arminstructions/singledatatransferinstruction.h \
     arminstructions/blockdatatransferinstruction.h \
+    arminstructions/branchinstruction.h \
     utils.h \
     arminstructions/armutils.h

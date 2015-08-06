@@ -7,10 +7,10 @@ int readELF(std::string file)
     ifstream binary(file.c_str(), ios::binary);
 
     //read magic bytes
-    string magic(4 , ' ');
+    string magic(5, ' ');
     binary.read(&magic[0], 4);
 
-    if (!magic.compare("\x7FELF")){
+    if (!magic.compare("\x7F""ELF")){
         cout << magic << endl;
         cerr << "Invalid elf file - magic bytes are wrong" << endl;
         return 1;

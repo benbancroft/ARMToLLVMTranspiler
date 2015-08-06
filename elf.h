@@ -17,6 +17,7 @@
 #include "arminstructions/dataprocessinginstruction.h"
 #include "arminstructions/singledatatransferinstruction.h"
 #include "arminstructions/blockdatatransferinstruction.h"
+#include "arminstructions/branchinstruction.h"
 
 enum OSABIType { System_V, HP_UX, NetBSD, Linux, Solaris, AIX, IRIX, FreeBSD, OpenBSD, OpenVMS };
 enum BinaryType { Relocatable, Executable, Shared, Core };
