@@ -1,6 +1,6 @@
-#include "utils.h"
+#include "elfutils.h"
 
-namespace Utils{
+namespace Elf{
 
     uint16_t readInt16(std::ifstream* file, Endianness systemEndianness, Endianness binaryEndianness){
 
@@ -50,6 +50,15 @@ namespace Utils{
             return readInt64(file, systemEndianness, binaryEndianness);
         }else{
             return readInt32(file, systemEndianness, binaryEndianness);
+        }
+    }
+
+    uint64_t mapVirtualAddressToFile(uint64_t virtualAddress, ELFHeader* header){
+        //now we need to map the virtual entry point against the binary.
+        for (ProgramSectionHeader &section : header->programSectionHeaders){
+            if (virtualAddress >= section.virtualAddr && section.virtualAddr + section.segmentMemSize >= virtualAddress){
+                return virtualAddress - section.virtualAddr + section.offset;
+            }
         }
     }
 

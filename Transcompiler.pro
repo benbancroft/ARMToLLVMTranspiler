@@ -13,7 +13,8 @@ SOURCES += main.cpp \
     arminstructions/blockdatatransferinstruction.cpp \
     arminstructions/branchinstruction.cpp \
     arminstructions/armutils.cpp \
-    utils.cpp
+    basicblock.cpp \
+    elfutils.cpp
 
 include(deployment.pri)
 qtcAddDeployment()
@@ -25,5 +26,8 @@ HEADERS += \
     arminstructions/singledatatransferinstruction.h \
     arminstructions/blockdatatransferinstruction.h \
     arminstructions/branchinstruction.h \
-    utils.h \
-    arminstructions/armutils.h
+    arminstructions/armutils.h \
+    basicblock.h \
+    elfheader.h \
+    elfutils.h \
+    utils.h

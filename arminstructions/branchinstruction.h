@@ -10,6 +10,12 @@ private:
     int32_t addressOffset;
 public:
     BranchInstruction(Condition condition, bool linkedBranch, int32_t addressOffset);
+    const int32_t GetAddressOffset(){
+        return addressOffset;
+    }
+    const bool IsLinkedBranch(){
+        return linkedBranch;
+    }
 };
 
 #endif // BRANCHINSTRUCTION_H
